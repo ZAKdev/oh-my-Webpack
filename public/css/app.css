@@ -1,0 +1,9 @@
+.container {
+	display: flex;
+	background: #000;
+	color: #fff;
+}
+
+body {
+	background: #ccc;
+}
