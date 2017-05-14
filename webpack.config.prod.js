@@ -5,7 +5,7 @@ const
 
 const prodConfig = {
 	test: /\.js$/,
-	exclude: "node_modules",
+	exclude: "/node_modules",
 	loader: stripLoader.loader("console.log")
 }
 
