@@ -1,19 +1,19 @@
 const
+    config = require("./config/config"),
     path = require("path"),
     webpack = require("webpack"),
     ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    context: path.resolve("public"),
-    entry: "./index",
+    context: path.resolve(config.basePath),
+    entry: config.entryFile,
     output: {
-        path: path.resolve("public"),
-        filename: "index.min.js"
+        path: path.resolve(config.basePath),
+        filename: config.outputJS
     },
     devServer: {
-        //compress: true,
-        port: 9000,
-        contentBase: "public"
+        port: config.port,
+        contentBase: config.basePath
     },
     module: {
         loaders: [
@@ -21,9 +21,6 @@ module.exports = {
                 test: /\.js$/,
                 exclude: "/node_modules",
                 loader: "babel-loader",
-                query: {
-                    presets: 'es2015',
-                },
             },
             {
                 test: /\.css$/,
@@ -48,11 +45,16 @@ module.exports = {
                     fallback: 'style-loader',
                     use: ["css-loader", "autoprefixer-loader", "stylus-loader"]
                 })
+            },
+            {
+                test: /\.html$/,
+                exclude: "/node_modules",
+                loader: "raw-loader"
             }
         ]
     },
     plugins: [
-        new ExtractTextPlugin("index.css"),
+        new ExtractTextPlugin(config.outputCSS),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",

@@ -1,17 +1,17 @@
-require("./scripts/functions");
+// HTMLs
+import {} from './index.html'
 
-const login = require("./login");
+// JS
+import {} from './scripts/functions'
+
+// CSS
+import {} from './css/app.css'
+import {} from './scss/app.scss'
+import {} from './stylus/app.styl'
 
 const app = document.getElementsByClassName("app")[0];
 
-function showText (text){
+const showText =  text => 
 	app.innerHTML = text
-}
 
-showText("My First WebPack, Running very awesome");
-
-login("ZAK", "asf");
-
-require("./css/app.css");
-require("./scss/app.scss");
-require("./stylus/app.styl");
+showText("Oh my Webpack");
