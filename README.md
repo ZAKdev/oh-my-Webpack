@@ -32,7 +32,17 @@ outputJS: "index.min.js",
 outputCSS: "index.css"
 ```
 
-## Run React
+### Installation
+* `npm install`
+* `npm install webpack-dev-server -g`
+
+### Development
+* `npm start`
+
+### Production Build
+* `npm run prod`
+
+### Run React
 * Install all react dependencies
 * Edit `.babelrc` file
 ```
@@ -43,20 +53,10 @@ outputCSS: "index.css"
 * `import` or `require` everything in your entry file by default entry file is `index.js`
 * Ready to rock!
 
-## Run Angular 1
+### Run Angular 1
 * Install all angular dependencies
 * `import` or `require` everything in your entry file by default entry file is `index.js`
 * Ready to rock!
-
-## Installation
-* `npm install`
-* `npm install webpack-dev-server -g`
-
-## Development
-* `npm start`
-
-## Production Build
-* `npm run prod`
 
 ## Next Release
 Next release going to have `typescript`, `elm` and other suggested features.
