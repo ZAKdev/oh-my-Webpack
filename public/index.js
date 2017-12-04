@@ -1,14 +1,14 @@
 // HTMLs
-import {} from './index.html'
+import './index.html'
 
 // JS
-import {} from './scripts/functions'
+import './scripts/functions'
 import es6Function from './es6/index.es6'
 
 // CSS
-import {} from './css/app.css'
-import {} from './scss/app.scss'
-import {} from './stylus/app.styl'
+import './css/app.css'
+import './scss/app.scss'
+import './stylus/app.styl'
 
 const app = document.getElementById("app");
 
