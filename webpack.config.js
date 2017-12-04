@@ -11,6 +11,9 @@ module.exports = {
         path: path.resolve(config.basePath),
         filename: config.outputJS
     },
+    resolve: {
+        extensions: ['.js', '.jsx', '.json'],
+    },
     devServer: {
         port: config.port,
         contentBase: config.basePath
@@ -18,13 +21,13 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.(js|es6)$/,
-                exclude: "/node_modules",
+                test: /\.(js|es6|jsx)$/,
+                exclude: "/node_modules/",
                 loader: "babel-loader",
             },
             {
                 test: /\.css$/,
-                exclude: "/node_modules",
+                exclude: "/node_modules/",
                 loader: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: ["css-loader", "autoprefixer-loader"]
@@ -32,7 +35,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                exclude: "/node_modules",
+                exclude: "/node_modules/",
                 loader: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: ["css-loader", "autoprefixer-loader", { loader: 'sass-loader'}]
@@ -40,7 +43,7 @@ module.exports = {
             },
             {
                 test: /\.styl$/,
-                exclude: "/node_modules",
+                exclude: "/node_modules/",
                 loader: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: ["css-loader", "autoprefixer-loader", "stylus-loader"]
@@ -48,7 +51,7 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                exclude: "/node_modules",
+                exclude: "/node_modules/",
                 loader: "raw-loader"
             }
         ]

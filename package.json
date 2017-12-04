@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server -d -p",
-    "prod": "webpack --config webpack.config.prod.js -d -p"
+    "prod": "webpack --config webpack.config.prod.js -d -p",
+    "server": "nodemon ./node_modules/.bin/babel-node server/index.js"
   },
   "author": "Zak",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.22.0",
@@ -28,6 +30,7 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
+    "express": "^4.16.2",
     "jquery": "^3.1.1"
   }
 }
