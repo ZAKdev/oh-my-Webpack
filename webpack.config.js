@@ -18,6 +18,11 @@ module.exports = {
     module: {
         loaders: [
             {
+                test: /\.elm$/,
+                exclude: [/elm-stuff/, /node_modules/],
+                loader:  'elm-webpack-loader?verbose=true&warn=true'
+            },
+            {
                 test: /\.(js|es6)$/,
                 exclude: "/node_modules",
                 loader: "babel-loader",
@@ -51,7 +56,8 @@ module.exports = {
                 exclude: "/node_modules",
                 loader: "raw-loader"
             }
-        ]
+        ],
+        noParse: /\.elm$/
     },
     plugins: [
         new ExtractTextPlugin(config.outputCSS),

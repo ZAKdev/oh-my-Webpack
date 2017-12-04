@@ -24,10 +24,11 @@
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.4.0",
-    "webpack": "^2.1.0-beta.22",
+    "webpack": "^3.0.0",
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
+    "elm-webpack-loader": "^4.3.1",
     "jquery": "^3.1.1"
   }
 }
